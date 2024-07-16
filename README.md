@@ -26,3 +26,7 @@
 
 - WeChat: kangert
 - Email: kangert@qq.com
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=kkangert/kspider-ui&type=Date)](https://star-history.com/#kkangert/kspider-ui&Date)
