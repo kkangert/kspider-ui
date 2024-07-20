@@ -4,7 +4,7 @@ const cssCdnUrlList: Array<string> = [
 	'//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
 
 	// Kspider执行器节点ICON
-	'//at.alicdn.com/t/c/font_3968407_oframj6vjwp.css',
+	'//at.alicdn.com/t/c/font_3968407_rcq8r0tfjzc.css',
 ];
 // 第三方 js url
 const jsCdnUrlList: Array<string> = [];
