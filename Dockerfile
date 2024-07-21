@@ -1,4 +1,15 @@
+# step1
 # 基础镜像使用Nginx
+FROM nginx:1.18.0-alpine as builds
+
+# 设置工作目录
+WORKDIR /app
+COPY . /app/
+
+# 编译
+RUN npm i -g pnpm && pnpm i && pnp run build
+
+# step2
 FROM nginx:1.18.0-alpine
 
 # 作者
@@ -8,10 +19,10 @@ LABEL org.opencontainers.image.authors=kangert<kangert@qq.com>
 ENV TimeZone=Asia/Shanghai    
 
 # 将前端dist文件中的内容复制到nginx目录
-COPY ./dist/  /usr/share/nginx/html/
+COPY --from=builds /app/dist/ /usr/share/nginx/html/
 
 # nginx默认配置文件
-COPY ./default.conf /etc/nginx/conf.d/
+COPY /app/default.conf /etc/nginx/conf.d/
 
 # 暴露端口
 EXPOSE 80
