@@ -40,13 +40,6 @@ export default function ({ crudExpose }: any) {
 					show: true,
 					dropdown: true,
 				},
-				bindModel: {
-					text: '绑定模型',
-					dropdown: true,
-					async click(ctx: any) {
-						// crudExpose.crudBinding.value.customProps.binCallbackUrlDialogShow = true;
-					},
-				},
 			},
 			dropdown: {
 				// 操作列折叠，dropdown参数配置
