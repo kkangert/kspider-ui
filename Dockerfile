@@ -22,7 +22,7 @@ ENV TimeZone=Asia/Shanghai
 COPY --from=builds /app/dist/ /usr/share/nginx/html/
 
 # nginx默认配置文件
-COPY /app/default.conf /etc/nginx/conf.d/
+COPY --from=builds /app/default.conf /etc/nginx/conf.d/
 
 # 暴露端口
 EXPOSE 80
