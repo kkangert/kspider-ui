@@ -6,7 +6,7 @@ WORKDIR /app
 COPY . /app/
 
 # 编译
-RUN npm i -g pnpm && pnpm i && pnp run build
+RUN npm i -g pnpm && pnpm i && pnpm run build
 
 # step2
 FROM nginx:1.18.0-alpine
