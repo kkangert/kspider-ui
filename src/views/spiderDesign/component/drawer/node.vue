@@ -276,7 +276,7 @@ defineExpose({
 				justify-content: center;
 				align-items: center;
 				color: black;
-				font-size: 10%;
+				font-size: 80%;
 			}
 
 			.active {
