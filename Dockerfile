@@ -1,6 +1,5 @@
 # step1
-# 基础镜像使用Nginx
-FROM nginx:1.18.0-alpine as builds
+FROM node:20.15.1-slim as builds
 
 # 设置工作目录
 WORKDIR /app
