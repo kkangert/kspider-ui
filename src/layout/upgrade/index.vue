@@ -17,8 +17,8 @@
 			<div class="upgrade-content">
 				{{ getThemeConfig.globalTitle }} {{ $t('message.upgrade.msg') }}
 				<div class="mt5">
-					<el-link type="primary" class="font12" href="https://gitee.com/lyt-top/vue-next-admin/blob/master/CHANGELOG.md" target="_black">
-						CHANGELOG.md
+					<el-link type="primary" class="font12" href="https://github.com/kkangert/kspider/releases" target="_black">
+						更新日志
 					</el-link>
 				</div>
 				<div class="upgrade-content-desc mt5">{{ $t('message.upgrade.desc') }}</div>
