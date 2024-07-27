@@ -865,7 +865,7 @@ onUnmounted(() => {
 		bottom: 0;
 		left: 0;
 		&::after {
-			content: '请使用大屏进行爬虫流程设计';
+			content: '请使用大屏进行流程设计';
 			position: absolute;
 			top: 0;
 			right: 0;

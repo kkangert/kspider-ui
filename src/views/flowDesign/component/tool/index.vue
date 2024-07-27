@@ -38,7 +38,7 @@ const state = reactive({
 // 设置 tool 标题
 const setToolTitle = computed(() => {
 	let { globalTitle } = themeConfig.value;
-	return `${globalTitle}爬虫流程设计器`;
+	return `${globalTitle}流程设计器`;
 });
 // 顶部工具栏
 const onToolClick = (fnName: string) => {
