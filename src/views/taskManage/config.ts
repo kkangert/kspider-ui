@@ -1,7 +1,7 @@
 import { useSpiderTaskApi } from './api';
 import { CrudOptions, AddReq, EditReq, DelReq, dict } from '@fast-crud/fast-crud';
 import { ref } from 'vue';
-import { useSpiderApi } from '/@/views/spiderManage/api';
+import { useSpiderApi } from '../flowManage/api';
 
 const spiderList = ref([]);
 const searchSpiderLoadding = ref(false);

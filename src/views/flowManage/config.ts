@@ -43,7 +43,7 @@ export default function ({ crudExpose, context }: CreateCrudOptionsProps) {
 					text: '设计',
 					dropdown: true,
 					async click(ctx: any) {
-						context?.router.push({ path: '/spiderDesign/' + ctx.row.flowId });
+						context?.router.push({ path: '/flowDesign/' + ctx.row.flowId });
 					},
 				},
 			},
@@ -73,7 +73,7 @@ export default function ({ crudExpose, context }: CreateCrudOptionsProps) {
 		columns: {
 			// 字段配置
 			flowId: {
-				title: '爬虫ID',
+				title: '流程ID',
 				type: 'text',
 				search: { show: false },
 				editForm: { show: false },
@@ -83,7 +83,7 @@ export default function ({ crudExpose, context }: CreateCrudOptionsProps) {
 				valueResolve: () => {},
 			},
 			name: {
-				title: '爬虫名称',
+				title: '流程名称',
 				search: { show: true },
 				editForm: { show: true },
 				viewForm: { show: true },

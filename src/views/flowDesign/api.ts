@@ -1,7 +1,7 @@
 import request from '/@/utils/request';
 
 /**
- * 爬虫可视化设计界面
+ * 可视化爬虫\WEB自动化测试工具设计界面
  */
 export function useSpiderDesignApi() {
 	return {
@@ -57,8 +57,8 @@ export function useSpiderDesignApi() {
 		},
 
 		/**
-		 * 获取当前爬虫工作流json数据(用于前端渲染流程图)
-		 * @param flowId 爬虫ID
+		 * 获取当前工作流json数据(用于前端渲染流程图)
+		 * @param flowId 流程ID
 		 * @returns
 		 */
 		querySpiderFlowJson: (flowId: number) => {

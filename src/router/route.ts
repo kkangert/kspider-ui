@@ -42,17 +42,17 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 		path: '/',
 		name: '/',
 		component: () => import('/@/layout/index.vue'),
-		redirect: '/spiderManage',
+		redirect: '/flowManage',
 		meta: {
 			isKeepAlive: true,
 		},
 		children: [
 			{
-				path: '/spiderManage',
-				name: 'spiderManage',
-				component: () => import('/@/views/spiderManage/index.vue'),
+				path: '/flowManage',
+				name: 'flowManage',
+				component: () => import('../views/flowManage/index.vue'),
 				meta: {
-					title: '爬虫管理',
+					title: '流程管理',
 					isLink: '',
 					isHide: false,
 					isKeepAlive: true,
@@ -63,11 +63,11 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 				},
 				children: [
 					{
-						path: '/spiderDesign/:flowId',
-						name: 'spiderDesign',
-						component: () => import('/@/views/spiderDesign/index.vue'),
+						path: '/flowDesign/:flowId',
+						name: 'flowDesign',
+						component: () => import('../views/flowDesign/index.vue'),
 						meta: {
-							title: '爬虫设计',
+							title: '流程设计',
 							isLink: '',
 							isHide: true,
 							isKeepAlive: true,
@@ -108,7 +108,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 					roles: ['admin', 'common'],
 					icon: 'iconfont icon-shouye',
 				},
-			}
+			},
 		],
 	},
 ];

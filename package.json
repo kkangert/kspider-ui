@@ -1,7 +1,7 @@
 {
 	"name": "kspider",
 	"version": "0.0.2",
-	"description": "Kspider前端项目,为数据采集爬虫工具,提供可视化配置方式",
+	"description": "Kspider前端项目,为爬虫、WEB自动化测试工具,提供可视化配置方式",
 	"author": "kangert<kangert@qq.com>",
 	"private": true,
 	"scripts": {
