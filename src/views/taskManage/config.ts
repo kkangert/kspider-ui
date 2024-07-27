@@ -62,7 +62,7 @@ export default function ({ crudExpose }: any) {
 					text: '产物下载',
 					dropdown: true,
 					async click(ctx: any) {
-						useSpiderTaskApi().download({ taskId: ctx.row.taskId });
+						useSpiderTaskApi().download({ flowId: ctx.row.flowId, taskId: ctx.row.taskId });
 					},
 				},
 			},
