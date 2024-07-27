@@ -107,6 +107,7 @@ import { jsplumbDefaults, jsplumbMakeSource, jsplumbMakeTarget, jsplumbConnect }
 import { useSpiderDesignApi } from './api';
 import { Session } from '/@/utils/storage';
 import { formatDate } from '/@/utils/formatTime';
+import { useSpiderTaskApi } from '../taskManage/api';
 const route = useRoute();
 
 // 引入组件
@@ -580,8 +581,11 @@ const onToolClick = (fnName: String) => {
 		case 'stopDebug':
 			onToolStop();
 			break;
-		case 'download':
-			onToolDownload();
+		case 'flowDownload':
+			onToolFlowDownload();
+			break;
+		case 'fileDownload':
+			onToolFileDownload();
 			break;
 		case 'submit':
 			onToolSubmit();
@@ -633,8 +637,8 @@ const onToolStop = () => {
 	state.socket.send(data);
 };
 
-// 顶部工具栏-下载
-const onToolDownload = () => {
+// 顶部工具栏-流程下载
+const onToolFlowDownload = () => {
 	const { globalTitle } = themeConfig.value;
 	const href = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(state.jsplumbData, null, '\t'));
 	const aLink = document.createElement('a');
@@ -644,6 +648,12 @@ const onToolDownload = () => {
 	aLink.remove();
 	ElMessage.success('下载成功');
 };
+
+// 顶部工具栏-产物下载
+const onToolFileDownload = () => {
+	useSpiderTaskApi().download({ flowId: Number(route.params.flowId) })
+}
+
 // 顶部工具栏-提交
 const onToolSubmit = () => {
 	useSpiderDesignApi()

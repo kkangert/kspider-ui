@@ -23,7 +23,8 @@ const { themeConfig } = storeToRefs(storesThemeConfig);
 const state = reactive({
 	toolList: [
 		{ icon: 'ele-Help', title: '帮助', fnName: 'help' },
-		{ icon: 'ele-Download', title: '下载流程', fnName: 'download' },
+		{ icon: 'ele-Download', title: '下载流程', fnName: 'flowDownload' },
+		{ icon: 'ele-FolderOpened', title: '产物下载', fnName: 'fileDownload' },
 		{ icon: 'ele-Odometer', title: '测试流程', fnName: 'test' },
 		{ icon: 'ele-Aim', title: '开启调试', fnName: 'debug' },
 		{ icon: 'ele-Bottom', title: '单步调试', fnName: 'resume' },
