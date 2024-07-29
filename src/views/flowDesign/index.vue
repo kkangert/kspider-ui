@@ -612,6 +612,7 @@ const onToolHelp = () => {
 const onToolTestOrDebug = (debug = false) => {
 	let data = JSON.stringify({
 		eventType: debug ? 'debug' : 'test',
+		flowId: Number(route.params.flowId),
 		message: state.jsplumbData,
 	});
 	state.socket.send(data);
