@@ -1,6 +1,6 @@
 {
 	"name": "kspider",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"description": "Kspider前端项目,为爬虫、WEB自动化测试工具,提供可视化配置方式",
 	"author": "kangert<kangert@qq.com>",
 	"private": true,
