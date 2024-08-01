@@ -35,7 +35,8 @@
 				</el-scrollbar>
 			</div>
 			<div class="config-item-card" v-if="state.currCard === '高级配置'">
-				<el-scrollbar>
+				<el-empty v-if="state.node.form.length === 0" description="暂无配置项" />
+				<el-scrollbar v-else>
 					<el-form :model="state.form" ref="extendFormRef" size="default" label-width="80px" label-position="top" class="pt15 pr15 pb15 pl15">
 						<el-form-item
 							:label="val.labelName"
