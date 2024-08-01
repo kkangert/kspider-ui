@@ -19,7 +19,7 @@
 							>
 								<div class="workflow-left-title" @click="onTitleClick(val)">
 									<span>{{ val.title }}</span>
-									<SvgIcon :name="val.isOpen ? 'ele-ArrowDown' : 'ele-ArrowRight'" />
+									<SvgIcon :size="16" :name="val.isOpen ? 'ele-ArrowDown' : 'ele-ArrowRight'" />
 								</div>
 								<div
 									class="workflow-left-item"
@@ -31,7 +31,7 @@
 									:data-nodeId="v.nodeId"
 								>
 									<div class="workflow-left-item-icon">
-										<SvgIcon :name="v.icon" class="workflow-icon-drag" customClass="workflow-icon-drag" />
+										<SvgIcon :size="16" :name="v.icon" class="workflow-icon-drag" customClass="workflow-icon-drag" />
 										<div class="font10 pl5 name">{{ v.label }}</div>
 									</div>
 								</div>
@@ -53,7 +53,7 @@
 							>
 								<div class="workflow-center-box" :class="{ 'workflow-center-active': state.jsPlumbNodeIndex === k }">
 									<div class="workflow-left-item-icon">
-										<SvgIcon :name="v.icon" class="workflow-icon-drag" customClass="workflow-icon-drag" />
+										<SvgIcon :size="16" :name="v.icon" class="workflow-icon-drag" customClass="workflow-icon-drag" />
 										<div class="font10 pl5 name">{{ v.label }}</div>
 									</div>
 								</div>
@@ -652,8 +652,8 @@ const onToolFlowDownload = () => {
 
 // 顶部工具栏-产物下载
 const onToolFileDownload = () => {
-	useSpiderTaskApi().download({ flowId: Number(route.params.flowId) })
-}
+	useSpiderTaskApi().download({ flowId: Number(route.params.flowId) });
+};
 
 // 顶部工具栏-提交
 const onToolSubmit = () => {
