@@ -33,25 +33,45 @@ service.interceptors.request.use(
 // 添加响应拦截器
 service.interceptors.response.use(
 	(response) => {
+
 		// 对响应数据做点什么
 		const res = response.data;
-		if (res.code && res.code !== 0) {
-			// token过期、缓存异常
-			if (res.code === 5 || res.code === 6 || res.code == 12 || res.code === 13) {
-				Session.clear(); // 清除浏览器全部临时缓存
-				ElMessageBox.alert(res.message, '提示', {})
-					.then(() => {
-						window.location.href = '/'; // 去登录页
-					})
-					.catch(() => {});
+
+		// 二进制
+		if (response.request.responseType === 'blob' || response.request.responseType === 'arraybuffer') {
+			if (res.type === 'application/json') {
+				const reader = new FileReader();
+				reader.readAsText(res);
+				reader.onload = () => {
+					// TODO 错误处理
+					ElMessage.error({ message: JSON.parse(reader.result).message });
+				};
+				return Promise.reject(service.interceptors.response);
 			} else {
-				ElMessage.error({ message: res.message });
+				// 暴露响应头
+				Object.assign(response.data, { headers: response.headers });
+				return response.data;
 			}
-			return Promise.reject(service.interceptors.response);
 		} else {
-			// 暴露响应头
-			Object.assign(response.data, { headers: response.headers });
-			return response.data;
+			// 结构化数据
+			if (res.code && res.code !== 0) {
+				// token过期、缓存异常
+				if (res.code === 5 || res.code === 6 || res.code == 12 || res.code === 13) {
+					Session.clear(); // 清除浏览器全部临时缓存
+					ElMessageBox.alert(res.message, '提示', {})
+						.then(() => {
+							window.location.href = '/'; // 去登录页
+						})
+						.catch(() => {});
+				} else {
+					ElMessage.error({ message: res.message });
+				}
+				return Promise.reject(service.interceptors.response);
+			} else {
+				// 暴露响应头
+				Object.assign(response.data, { headers: response.headers });
+				return response.data;
+			}
 		}
 	},
 	(error) => {
