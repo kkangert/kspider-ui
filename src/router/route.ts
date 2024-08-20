@@ -42,11 +42,26 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
 		path: '/',
 		name: '/',
 		component: () => import('/@/layout/index.vue'),
-		redirect: '/flowManage',
+		redirect: '/appManage',
 		meta: {
 			isKeepAlive: true,
 		},
 		children: [
+			{
+				path: '/appManage',
+				name: 'appManage',
+				component: () => import('/@/views/appManage/index.vue'),
+				meta: {
+					title: '应用管理',
+					isLink: '',
+					isHide: false,
+					isKeepAlive: true,
+					isAffix: false,
+					isIframe: false,
+					roles: ['admin', 'common'],
+					icon: 'iconfont icon-shouye',
+				},
+			},
 			{
 				path: '/flowManage',
 				name: 'flowManage',
